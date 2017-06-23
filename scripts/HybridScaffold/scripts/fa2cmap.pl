@@ -73,7 +73,8 @@ my %enzyme = (
 	"BbvCI" => "CCTCAGC",
 	"BsmI"  => "GAATGC",
 	"BsrDI" => "GCAATG",
-	"bseCI" => "ATCGAT"
+	"bseCI" => "ATCGAT",
+	"BssSI" => "CACGAG"
 	
 	# You can add more enzymes here ...
 	
@@ -291,6 +292,8 @@ sub Init{
 			$current_enzyme = "BsrDI";
 		} elsif(uc(substr($opts{n}, 0, 4)) eq "BSEC"){
 			$current_enzyme = "bseCI";
+		} elsif(uc(substr($opts{n}, 0, 4)) eq "BSSS{
+			$current_enzyme = "BssSI";
 		} else	{
 			dieLog ("ERROR: Unknown enzyme specified.\n");
 		}
