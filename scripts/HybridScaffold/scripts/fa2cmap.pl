@@ -1,6 +1,6 @@
 # $Id: fa2cmap.pl 3929 2015-07-08 23:59:25Z apang $
-
 #!/usr/bin/perl -w
+
 ########################################################################
 # File: fa2cmap.pl                                                     #
 # Date: 09/22/2014                                                     #
@@ -44,6 +44,9 @@ BEGIN {
                 $module_path2 = $module_path2."/5.10.1";
                 $lib4 = $module_path2."/x86_64-linux-thread-multi";}
         elsif ($] >= 5.016000 && $] <= 5.017000) {
+                $module_path2 = $module_path2."/5.10.1";
+                $lib4 = $module_path2."/x86_64-linux-thread-multi";}
+        elsif ($] >= 5.024000 && $] <= 5.025000) {
                 $module_path2 = $module_path2."/5.10.1";
                 $lib4 = $module_path2."/x86_64-linux-thread-multi";}
         else {
@@ -292,7 +295,7 @@ sub Init{
 			$current_enzyme = "BsrDI";
 		} elsif(uc(substr($opts{n}, 0, 4)) eq "BSEC"){
 			$current_enzyme = "bseCI";
-		} elsif(uc(substr($opts{n}, 0, 4)) eq "BSSS{
+		} elsif(uc(substr($opts{n}, 0, 4)) eq "BSSS"){
 			$current_enzyme = "BssSI";
 		} else	{
 			dieLog ("ERROR: Unknown enzyme specified.\n");
